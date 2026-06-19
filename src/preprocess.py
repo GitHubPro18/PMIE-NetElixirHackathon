@@ -1,13 +1,15 @@
 import os
 import pandas as pd
 import numpy as np
+import glob
 from config import DATA_DIR
 
 
 def load_google_ads(data_dir: str) -> pd.DataFrame:
-    path = os.path.join(data_dir, "google_ads_campaign_stats.csv")
-    if not os.path.exists(path):
-        raise FileNotFoundError(f"Google Ads stats not found at {path}")
+    matches = glob.glob(os.path.join(data_dir, "*google*.csv"))
+    if not matches:
+        raise FileNotFoundError(f"Google Ads stats not found in {data_dir}")
+    path = matches[0]
         
     df = pd.read_csv(path)
     
@@ -40,9 +42,10 @@ def load_google_ads(data_dir: str) -> pd.DataFrame:
     return df[cols]
 
 def load_meta_ads(data_dir: str) -> pd.DataFrame:
-    path = os.path.join(data_dir, "meta_ads_campaign_stats.csv")
-    if not os.path.exists(path):
-        raise FileNotFoundError(f"Meta Ads stats not found at {path}")
+    matches = glob.glob(os.path.join(data_dir, "*meta*.csv"))
+    if not matches:
+        raise FileNotFoundError(f"Meta Ads stats not found in {data_dir}")
+    path = matches[0]
         
     df = pd.read_csv(path)
     
@@ -93,9 +96,10 @@ def load_meta_ads(data_dir: str) -> pd.DataFrame:
     return df[cols]
 
 def load_bing_ads(data_dir: str) -> pd.DataFrame:
-    path = os.path.join(data_dir, "bing_campaign_stats.csv")
-    if not os.path.exists(path):
-        raise FileNotFoundError(f"Bing Ads stats not found at {path}")
+    matches = glob.glob(os.path.join(data_dir, "*bing*.csv"))
+    if not matches:
+        raise FileNotFoundError(f"Bing Ads stats not found in {data_dir}")
+    path = matches[0]
         
     df = pd.read_csv(path)
     

@@ -43,6 +43,7 @@ artifacts/
 cache/
 pickle/*
 !pickle/.gitkeep
+!pickle/model.pkl
 
 # Keep sample data under data/, but ignore duplicate/local root exports
 /*_campaign_stats.csv

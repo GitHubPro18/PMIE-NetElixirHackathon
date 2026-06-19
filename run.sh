@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euo pipefail
 
 # Retrieve arguments or use defaults
 DATA_DIR=${1:-"./data"}
