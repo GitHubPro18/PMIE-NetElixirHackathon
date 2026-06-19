@@ -1,0 +1,70 @@
+# Environment variables (contains secrets - never commit)
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.so
+*.dll
+.python-version
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project-specific generated artifacts
+output/*
+!output/.gitkeep
+logs/
+reports/
+artifacts/
+cache/
+pickle/*
+!pickle/.gitkeep
+
+# Keep sample data under data/, but ignore duplicate/local root exports
+/*_campaign_stats.csv
+/*.csv
+
+# Ignore transient copies
+*.log
+*.tmp
+*.bak
+pickle/*.tmp
+pickle/*.bak
+pickle/debug*
+
+# Test outputs
+coverage/
+htmlcov/
+.pytest_cache/
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Scratch files
+notebooks/
+scratch/
+experiments/
